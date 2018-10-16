@@ -244,9 +244,7 @@ set(TEST_LIB
   cartographer_test_library
 )
 add_library(${TEST_LIB} ${TEST_LIBRARY_HDRS} ${TEST_LIBRARY_SRCS})
-target_include_directories(${TEST_LIB} SYSTEM PRIVATE
-  "${GMOCK_INCLUDE_DIRS}")
-target_link_libraries(${TEST_LIB} PUBLIC ${GMOCK_LIBRARY})
+target_link_libraries(${TEST_LIB} PUBLIC GTest::gmock_main)
 target_link_libraries(${TEST_LIB} PUBLIC ${PROJECT_NAME})
 set_target_properties(${TEST_LIB} PROPERTIES
   COMPILE_FLAGS ${TARGET_COMPILE_FLAGS})

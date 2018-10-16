@@ -130,5 +130,5 @@ endmacro()
 
 macro(google_enable_testing)
   enable_testing()
-  find_package(GMock REQUIRED)
+  find_package(GTest 1.8.1 CONFIG REQUIRED)
 endmacro()
